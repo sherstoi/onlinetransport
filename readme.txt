@@ -12,4 +12,4 @@ Server side:
 Java 8; REST - Dropwizard; Cache - Redis; Database - MongoDB
 
 UI side:
-RestJS, React-Bootstrap
+ReactJS, React-Bootstrap

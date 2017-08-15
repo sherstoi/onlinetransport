@@ -38,7 +38,7 @@ public class TransportRest {
         Transport transport = transportService.findTransportBySerialId(serialId);
         return (transport != null) ?
                 Response.status(Response.Status.FOUND).entity(transport).build() :
-                Response.status(Response.Status.NOT_FOUND).entity(null).build();
+                Response.status(Response.Status.NOT_FOUND).build();
     }
 
     @GET
@@ -47,7 +47,7 @@ public class TransportRest {
         List<Transport> transportList = transportService.findTransportByNumAndType(transportNum, transportType);
         return (transportList != null) ?
                 Response.status(Response.Status.FOUND).entity(new GenericEntity<List<Transport>>(transportList){}).build() :
-                Response.status(Response.Status.NOT_FOUND).entity(null).build();
+                Response.status(Response.Status.NOT_FOUND).build();
     }
 
     @GET
@@ -55,5 +55,12 @@ public class TransportRest {
     public Response findAllTransports () {
         List<Transport> transportList = transportService.findAllTransports();
         return Response.ok().entity(new GenericEntity<List<Transport>>(transportList){}).build();
+    }
+
+    @DELETE
+    @Path("/deleteTransportBySerialId")
+    public Response deleteTransportBySerialId(@QueryParam("serialId") String serialId) {
+        transportService.deleteTransportBySerId(serialId);
+        return Response.ok().entity(serialId).build();
     }
 }

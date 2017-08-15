@@ -37,4 +37,8 @@ public class TransportDAO extends BasicDAO<Transport, String> {
         Key<Transport> transportKey = getDatastore().save(transport);
         return getDatastore().getByKey(Transport.class, transportKey);
     }
+
+    public void deleteTransportBySerialId(String serialId) {
+        getDatastore().delete(Transport.class, serialId);
+    }
 }

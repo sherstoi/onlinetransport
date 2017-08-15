@@ -41,4 +41,8 @@ public class TransportService {
     public List<Transport> findAllTransports() {
         return transportDAO.findAllTransport();
     }
+
+    public void deleteTransportBySerId(String serialId) {
+        transportDAO.deleteTransportBySerialId(serialId);
+    }
 }
