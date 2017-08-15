@@ -10,5 +10,4 @@ once per 3 minute.
 Stack of technologies.
 Server side: Java 8, Dropwizard (Jetty, Guice, JAX-RS), Redis, MongoDB.
 
-UI side:
-ReactJS, React-Bootstrap
+UI side: ReactJS, React-Bootstrap.

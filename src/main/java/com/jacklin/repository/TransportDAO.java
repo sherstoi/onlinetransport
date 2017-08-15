@@ -40,5 +40,6 @@ public class TransportDAO extends BasicDAO<Transport, String> {
 
     public void deleteTransportBySerialId(String serialId) {
         getDatastore().delete(Transport.class, serialId);
+
     }
 }
