@@ -15,4 +15,10 @@ public class JacklinConfig extends Configuration {
 
     @JsonProperty
     public String mongodb = "jakdojade_db";
+
+    @JsonProperty
+    public String redisHost = "localhost";
+
+    @JsonProperty
+    public int redisPort = 6379;
 }

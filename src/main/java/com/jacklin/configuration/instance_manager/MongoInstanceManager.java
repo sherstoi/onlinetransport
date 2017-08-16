@@ -1,4 +1,4 @@
-package com.jacklin.configuration;
+package com.jacklin.configuration.instance_manager;
 
 import com.mongodb.MongoClient;
 import io.dropwizard.lifecycle.Managed;

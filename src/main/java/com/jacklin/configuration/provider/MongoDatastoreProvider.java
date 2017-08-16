@@ -1,8 +1,9 @@
-package com.jacklin.configuration;
+package com.jacklin.configuration.provider;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
+import com.jacklin.configuration.JacklinConfig;
 import com.mongodb.MongoClient;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;

@@ -1,4 +1,4 @@
-package com.jacklin.healthcheck;
+package com.jacklin.configuration.healthcheck;
 
 import com.codahale.metrics.health.HealthCheck;
 import com.mongodb.MongoClient;
