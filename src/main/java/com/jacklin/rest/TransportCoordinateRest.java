@@ -2,11 +2,14 @@ package com.jacklin.rest;
 
 import com.google.inject.Inject;
 import com.jacklin.model.TransportCurrentLocation;
+import com.jacklin.model.TransportCurrentLocationJrnl;
 import com.jacklin.service.TransportCoordinateService;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 /**
  * Created by iurii on 8/16/17.
@@ -35,5 +38,20 @@ public class TransportCoordinateRest {
     public Response getTransportLocation(@QueryParam("serialId") String serialId) {
         TransportCurrentLocation transportCurrentLocation = transportCoordinateService.getTransportLocation(serialId);
         return Response.ok().entity(transportCurrentLocation).build();
+    }
+
+    @GET
+    @Path("/getAllJrnlCoord")
+    public Response getAllTransportCoordinateFromJrnl() {
+        List<TransportCurrentLocationJrnl> transportCurrentLocationJrnlList = transportCoordinateService.findAllCoordinateFromJrnl();
+        return Response.ok().entity(new GenericEntity<List<TransportCurrentLocationJrnl>>
+                (transportCurrentLocationJrnlList){}).build();
+    }
+
+    @DELETE
+    @Path("/cleanTransportCoord")
+    public Response cleanTransportCoordJrnl() {
+        transportCoordinateService.cleanTransportCoordFromJrnl();
+        return Response.ok().build();
     }
 }

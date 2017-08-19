@@ -2,11 +2,7 @@ package com.jacklin.rest;
 
 import com.jacklin.enums.TransportType;
 import com.jacklin.model.Transport;
-import com.jacklin.model.TransportCurrentLocation;
 import com.jacklin.service.TransportService;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
