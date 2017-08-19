@@ -3,8 +3,8 @@ package com.jacklin.job;
 import com.google.inject.Inject;
 import com.jacklin.converter.TransportCoordinateConverter;
 import com.jacklin.model.TransportCurrentLocationJrnl;
-import com.jacklin.repository.TransportCoordinateJrnlDAO;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.log4j.Logger;
 import org.mongodb.morphia.Datastore;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -18,6 +18,8 @@ import java.util.List;
  * Created by iurii on 8/17/17.
  */
 public class CacheUploaderJob implements Runnable {
+    private static final Logger logger = Logger.getLogger(CacheUploaderJob.class);
+
     private static final String ALL_KEYS = "*";
     private static final String ZERO = "0";
 
@@ -32,7 +34,7 @@ public class CacheUploaderJob implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Job is running!");
+        logger.info("Job is starting!");
         try (Jedis jedis = jedisPool.getResource()) {
             ScanParams scanParams = buildScanParams();
             String cursor = ScanParams.SCAN_POINTER_START;
@@ -50,7 +52,7 @@ public class CacheUploaderJob implements Runnable {
                 }
             }
         }
-        System.out.println("Job has been finished!");
+        logger.info("Job has been finished!");
     }
 
     private ScanParams buildScanParams() {
