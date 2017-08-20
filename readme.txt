@@ -9,7 +9,7 @@ once per 3 minute.
 Stack of technologies.
 Server side: Java 8, Dropwizard (Jetty, Guice, JAX-RS), Redis, MongoDB.
 
-To run this program just execute gradle task:
+Before run this program please execute gradle task:
 ./gradlew awesomeFunJar
 
 New jar file should appear in directory build/libs/
