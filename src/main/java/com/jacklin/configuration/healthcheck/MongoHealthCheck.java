@@ -1,6 +1,7 @@
 package com.jacklin.configuration.healthcheck;
 
 import com.codahale.metrics.health.HealthCheck;
+import com.google.inject.Inject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoIterable;
 
@@ -10,6 +11,7 @@ import com.mongodb.client.MongoIterable;
 public class MongoHealthCheck extends HealthCheck {
     private MongoClient mongoClient;
 
+    @Inject
     public MongoHealthCheck(MongoClient mongoClient) {
         this.mongoClient = mongoClient;
     }

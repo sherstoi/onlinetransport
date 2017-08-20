@@ -9,4 +9,9 @@ once per 3 minute.
 Stack of technologies.
 Server side: Java 8, Dropwizard (Jetty, Guice, JAX-RS), Redis, MongoDB.
 
-UI side: ReactJS, React-Bootstrap.
+To run this program just execute gradle task:
+./gradlew awesomeFunJar
+
+New jar file should appear in directory build/libs/
+After that you can run jar file with below command:
+java -jar build/libs/onlinetransport-1.0-SNAPSHOT-standalone.jar
